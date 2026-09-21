@@ -1,4 +1,4 @@
-"""Helper module to call some functionality in Automation Server using the API"""
+"""Helper module to call some functionality in Automation Server using the API."""
 
 import logging
 import os
@@ -53,7 +53,7 @@ def get_workqueue_items(workqueue: Workqueue, return_data=False):
 
 def get_item_info(item: WorkItem):
     """Unpack item"""
-    return item.data["item"]["data"], item.data["item"]["reference"]
+    return item.data["data"], item.reference
 
 
 def init_logger():

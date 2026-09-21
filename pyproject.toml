@@ -1,22 +1,26 @@
 [project]
-name = "process-template"
+name = "process-name-here"
 version = "0.0.0"
-description = "Add your description here"
+description = "description-here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "automation-server-client @ git+https://github.com/odense-rpa/automation-server-client.git",
-    "mbu-dev-shared-components>=3.0.0",
-    "mbu-rpa-core",
+    "mbu-rpa-core @ git+https://github.com/AAK-MBU/MBU-rpa-core.git",
     "pillow",
-    "ruff"
+    "python-dotenv",
 ]
+
+[dependency-groups]
+dev = ["ruff"]
 
 [tool.uv.sources]
 automation-server-client = { git = "https://github.com/odense-rpa/automation-server-client.git", tag = "v0.2.0" }
+mbu-rpa-core = { git = "https://github.com/AAK-MBU/MBU-rpa-core.git", tag = "v0.2.5" }
 
-[tool.setuptools]
-py-modules = []
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ats_framework*"]
 
 [tool.ruff]
 target-version = "py313"
@@ -50,7 +54,7 @@ select = [
 
 [tool.ruff.lint.isort]
 # Keep imports tidy and deterministic
-# known-first-party = ["your_package_name"]
+known-first-party = ["ats_framework"]
 
 [tool.ruff.format]
 # Use the formatter; CI step already checks it with `ruff format --check .`
@@ -65,5 +69,5 @@ exclude = [
   "__pycache__"
 ]
 pythonVersion = "3.13"
-typeCheckingMode = "basic"   # or "basic"
+typeCheckingMode = "basic"   # or "strict"
 reportMissingTypeStubs = true
