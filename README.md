@@ -105,6 +105,7 @@ Any module can then reach it without passing it through every call:
 ```python
 from ats_framework.core.application_handler import get_app
 
+
 def open_patient(cpr: str):
     app = get_app()
     app.open_patient(cpr)
