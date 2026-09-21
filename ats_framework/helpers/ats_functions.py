@@ -1,4 +1,4 @@
-"""Helper module to call some functionality in Automation Server using the API"""
+"""Helper module to call some functionality in Automation Server using the API."""
 
 import logging
 import os
