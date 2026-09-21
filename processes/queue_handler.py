@@ -50,7 +50,7 @@ async def concurrent_add(workqueue: Workqueue, items: list[dict]) -> None:
 
     async def add_one(it: dict):
         reference = str(it.get("reference") or "")
-        data = {"item": it}
+        data = it
 
         async with sem:
             for attempt in range(1, config.MAX_RETRIES + 1):

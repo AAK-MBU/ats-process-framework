@@ -74,7 +74,7 @@ async def process_workqueue(workqueue: Workqueue):
                     except BusinessError as e:
                         context = ErrorContext(
                             item=item,
-                            action=item.pending_user(str(e)),
+                            action=item.pending_user,
                             send_mail=False,
                             process_name=workqueue.name,
                         )
